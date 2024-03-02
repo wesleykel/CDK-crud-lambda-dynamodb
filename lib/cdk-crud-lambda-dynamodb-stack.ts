@@ -7,7 +7,7 @@ export class CdkCrudLambdaDynamodbStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    const SERVICE = "Crud Lambda";
+    const SERVICE = "Crud-Lambda";
 
     const db = new cdk.aws_dynamodb.TableV2(this, "todoDB", {
       partitionKey: { name: "PK", type: cdk.aws_dynamodb.AttributeType.STRING },
