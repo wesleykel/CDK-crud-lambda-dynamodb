@@ -15,7 +15,11 @@ export const handler = async (
   context: Context
 ): Promise<APIGatewayProxyResult> => {
   if (event.httpMethod === "POST") {
-    return await addTodo(event);
+    console.log(event);
+
+    let i = await addTodo(event);
+    console.log(i);
+    return i;
   }
 
   if (
@@ -23,7 +27,10 @@ export const handler = async (
     event.path === "/getTodo"
     // event.queryStringParameters
   ) {
-    return await getTodo(event);
+    console.log(event);
+    let i = await getTodo(event);
+    console.log(i);
+    return i;
   }
 
   if (event.httpMethod === "GET" && event.path === "/getAll") {

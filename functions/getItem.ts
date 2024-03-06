@@ -3,8 +3,10 @@ import { GetItemCommand, GetItemCommandOutput } from "@aws-sdk/client-dynamodb";
 import { client } from "../src/handler";
 
 export const getTodo = async (event: APIGatewayProxyEvent) => {
+  console.log(event);
   try {
     const params = event.queryStringParameters;
+
     if (params) {
       if (params.todo) {
         const command = new GetItemCommand({
@@ -13,7 +15,7 @@ export const getTodo = async (event: APIGatewayProxyEvent) => {
         });
 
         const response: GetItemCommandOutput = await client.send(command);
-
+        console.log(response);
         return {
           statusCode: 200,
           body: JSON.stringify({ message: response.Item }),

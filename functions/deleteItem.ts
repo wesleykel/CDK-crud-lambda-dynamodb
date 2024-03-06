@@ -6,6 +6,7 @@ import {
 import { client } from "../src/handler";
 
 export const deleteTodo = async (event: APIGatewayProxyEvent) => {
+  console.log(event);
   if (event.queryStringParameters) {
     const params = event.queryStringParameters;
 
@@ -17,8 +18,10 @@ export const deleteTodo = async (event: APIGatewayProxyEvent) => {
         });
 
         const response: DeleteBackupCommandOutput = await client.send(command);
+        console.log(JSON.stringify({ message: response }));
         return {
           statusCode: 200,
+
           body: JSON.stringify({ message: response }),
         };
       } catch (error) {
