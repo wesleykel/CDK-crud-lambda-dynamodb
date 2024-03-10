@@ -25,6 +25,7 @@
     "@aws-sdk/lib-dynamodb": "^3.525.0",
     "@types/aws-lambda": "^8.10.134",
     "aws-cdk-lib": "2.130.0",
+    "cdk-nextjs-standalone": "^4.0.0-beta.28",
     "constructs": "^10.0.0",
     "esbuild": "^0.20.1",
     "source-map-support": "^0.5.21",
